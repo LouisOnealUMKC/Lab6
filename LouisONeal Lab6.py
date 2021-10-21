@@ -28,30 +28,44 @@
   
 ################################ 
 
+    # ch = 'A'
+    # print(ord(ch))111
+
+    # val = 65
+    # print(chr(val))
+
 import string
 
 def Encrypt(string_text, int_key) -> str:
-    EncryptedString = input('Enter (brief) text to encrypt:')
-    for i in EncryptedString:
-        print(chr)
-
-    return
+    NewString = ""
+    for i in string_text:
+        NewString += chr((ord(i) + int_key))
+    print(NewString)
+    return NewString
 
 def Decrypt(string_text, int_key) -> str:
-    return
-
-def Crack(string_text):
-    return 
+    NewString = ""
+    for i in string_text:
+        NewString += chr((ord(i) - int_key))
+    print(NewString)
+    return NewString
 
 def Get_input() -> str:
     my_num = input("1-4")
     return my_num
 
 def main():
-    ch = 'A'
-    print(ord(ch))
-
-    val = 65
-    print(chr(val))
-
+    Question = input("1. Encode a string\n 2. Decode a string \n Q. Quit\n")
+    if Question == '1':
+        Phrase = input('Enter Phrase to Encrypt')
+        ShiftAmount = int(input('Ente how many to shift by\n'))
+        EncryptedString = Encrypt(Phrase, ShiftAmount)
+        print(EncryptedString)
+        main()
+    if Question == '2':
+        Phrase = input('Enter Phrase to Decrypt')
+        ShiftAmount = int(input('Ente how many to shift by\n'))
+        DecryptedString = Decrypt(Phrase, ShiftAmount)
+        print(DecryptedString)
+        main()
 main()
