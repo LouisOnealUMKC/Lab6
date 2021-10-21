@@ -57,14 +57,14 @@ def Get_input() -> str:
 def main():
     Question = input("1. Encode a string\n 2. Decode a string \n Q. Quit\n")
     if Question == '1':
-        Phrase = input('Enter Phrase to Encrypt')
-        ShiftAmount = int(input('Ente how many to shift by\n'))
+        Phrase = input('Enter Phrase to Encrypt\n')
+        ShiftAmount = int(input('Enter how many to shift by\n'))
         EncryptedString = Encrypt(Phrase, ShiftAmount)
         print(EncryptedString)
         main()
     if Question == '2':
-        Phrase = input('Enter Phrase to Decrypt')
-        ShiftAmount = int(input('Ente how many to shift by\n'))
+        Phrase = input('Enter Phrase to Decrypt\n')
+        ShiftAmount = int(input('Enter how many to shift by\n'))
         DecryptedString = Decrypt(Phrase, ShiftAmount)
         print(DecryptedString)
         main()
